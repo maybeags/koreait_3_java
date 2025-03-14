@@ -18,7 +18,7 @@ import java.util.Scanner;
 
     if문을 통해서 0미만 및 100초과를 걸러내서 grade = x
     나머지 부분에 switch문을 작성하면 구현이 가능할겁니다.
-
+    https://www.github.com/maybeags/koreait_3_java
  */
 public class Condition08 {
     public static void main(String[] args) {
@@ -29,5 +29,27 @@ public class Condition08 {
         System.out.print("점수를 입력하세요 >>> ");
         score = scanner.nextInt();
         changedScore = score / 10;
+
+        if(score < 0 || score > 100) {
+            grade = "x";
+        } else {    // 이 경우 score >= 0에서 score <= 100
+            switch (changedScore) {
+                case 10, 9:
+                    grade = "A";
+                    break;
+                case 8:
+                    grade = "B";
+                    break;
+                case 7:
+                    grade = "C";
+                    break;
+                case 6:
+                    grade = "D";
+                    break;
+                default:
+                    grade = "F";
+            }
+        }
+        System.out.println("점수는 " + score + "점이며, 학점은 " + grade + "학점입니다.");
     }
 }
